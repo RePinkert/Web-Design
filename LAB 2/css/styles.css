@@ -22,28 +22,38 @@ html {
 
 /* styles the table tag with the ID "table-1"*/
 .table-1 {
-
+    margin-bottom: 4.0em;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid black;
 }
 
-.table-1 tr {
-
+.table-1 thead tr{
+    background: linear-gradient(to right, #008571, #840295); /* gradient background ヾ(≧▽≦*)o*/
+    color: white;
 }
+
+
 
 /* https://css-tricks.com/snippets/css/css3-zebra-striping-a-table/ */
 .table-1 tr:nth-child(odd) {
-
+    background-color: #ccc;
 }
 
 .table-1 td, .table-1 th {
   font-family: Trebuchet, Helvetica, sans-serif;
+  border: #e8e8e8 1px solid;
 }
 
 .table-1 th {
-
+    padding: 10px;
+    text-align: left;
 }
 
 .table-1 td {
-
+    padding: 10px;
+    text-align: left;
 }
 
 /*
@@ -53,17 +63,27 @@ html {
 
 /* styles the table tag with the ID "table-2"*/
 .table-2 {
-
-}
-
-.table-2 td, .table-2 th {
-  font-family: Trebuchet, Helvetica, sans-serif;
+    table-layout: auto;
+    width: 50%;
+    border-collapse: separate;
+    border-spacing: 10px;
 }
 
 .table-2 th {
-
+    background-color: #183645;
+    text-align: right;
+    text-transform: uppercase;
+    color: white;
 }
 
 .table-2 td {
+    background-color: #DD8B45;
+    text-align: left;
+    color: white;
+}
 
+.table-2 th, .table-2 td {
+    font-family: Trebuchet, Helvetica, sans-serif;
+    padding: 1em;
+    height: 1em;
 }
