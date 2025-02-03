@@ -1,0 +1,159 @@
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    UTILITIES
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* visually hides an element, but not from screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+/* clearfix - in case you decide to float elements */
+.group::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    STRUCTURE
+    set a background color
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+body {
+    background-color: rgb(255, 255, 255);
+    /* background-image: linear-gradient(to bottom, #f0f0f0, #ffffff); */
+    margin: 0;
+}
+.container {
+    width: 720px;
+    margin: 35px auto;
+    border: 1px solid black;
+    padding: 50px;
+}
+ul, ol, p {
+    margin: 0 0;
+    line-height: 1.5;
+}
+
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    TYPOGRAPHY
+    set a font choice for headlines, and another for all other text elements
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+figcaption {
+    font-size: 14px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+ul, ol {
+    list-style-type: disc;
+    margin-bottom: 20px;
+}
+li {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+h1, h2, h3, p, ul, ol, li {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+h1 {
+    color: #000000;
+    font-size: 36px;
+}
+h2 {
+    color: #111111;
+    font-size: 28px;
+}
+h3 {
+    color: #333333;
+    font-size: 17px;
+}
+small {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+}
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    IMAGES
+    place at least two images in your design, one should have a caption
+    adjust the styles for FIGURE, FIGCAPTION as needed
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+img {
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+figure {
+    margin: 10px 0;
+}
+
+
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    LINKS
+    set four states - LINK, VISITED, ACTIVE, HOVER
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+a:link {
+    color: olivedrab;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+a:active, a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+a:focus {
+    color: olive;
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    TABLE
+    style the table
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+table {
+    width: 40%;
+    border-collapse: collapse;
+    margin: 20px 0 0 2px;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #757575;
+}
+th {
+    background-color: #c2c2c2;
+}
+
+
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    PAGE
+    add at least one class then style it here
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+.highlight {
+    font-weight: bold; 
+    color: rgb(255,0,0);
+}
+
+
+
