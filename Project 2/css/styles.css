@@ -1,0 +1,164 @@
+/* natural box model */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* no break */
+.nobr {
+  white-space: nowrap;
+}
+
+/* START STYLES HERE */
+@font-face {
+  font-family: '仓耳渔阳体W01';
+  src: url('../fonts/仓耳渔阳体W01.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+span[lang="zh"] {
+  font-family: '仓耳渔阳体W01', 'Arial', sans-serif;
+}
+
+.quote {
+  background-image: linear-gradient(-161deg, #29d9c4ee,#e49763ee);
+  width:560px;
+  margin:100px auto;
+  /* border: 1px solid #000000; */
+  font-size: 24px;
+  text-shadow: rgb(194, 194, 194) 1px 1px;
+  background-color: #0000001c;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: #000000 5px solid;
+  position: relative;
+}
+
+.quote .chinese {
+  font-family: '仓耳渔阳体W01', 'Arial', sans-serif;
+  font-size: 36px;
+}
+
+.quote::before {
+  content: "「";
+  font-size: 48px;
+  color: #414141;
+  font-weight: bold;
+  position: absolute;
+  top: 75px;
+  left: -20px;
+}
+.quote::after {
+  content: "」";
+  font-size: 48px;
+  color: #414141;
+  font-weight: bold;
+  position: absolute;
+  top: 80px;
+  right: 110px;
+} 
+body {
+  background-image: url("../images/999.jpg");
+  background-size: cover;
+  font-family: Victor Mono, monospace;
+  /* height for testing purpose only */
+  /* height: 4096px; */
+}
+.quote-text{
+  font-size: 28px;
+}
+
+.citation{
+  text-align: right;
+  font-size: 18px;  
+}
+
+
+
+.Confucius {
+  width: 250px;
+  /* #1 */
+  /* position: fixed;
+  top: 100px;
+  right: 100px; */
+
+  /* #2 */
+  /* position: absolute;
+  top: 100px;
+  left: 100px; */
+
+  /* #3 bond relative to block*/
+  position: absolute;
+  bottom: -150px;
+  right: -130px;
+  z-index: +1;
+
+
+}
+
+
+/* MEDIA QUERIES FROM SMALLEST TO LARGEST = MOBILE FIRST */
+/* Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+
+/* MEDIA QUERIES FROM LARGEST TO SMALLEST */
+/* Extra small devices (portrait phones, less than 576px) */
+/* @media (max-width: 575.98px) {
+
+} */
+
+/* Small devices (landscape phones, less than 768px) */
+/* @media (max-width: 767.98px) {
+
+} */
+
+/* Medium devices (tablets, less than 992px) */
+/* @media (max-width: 991.98px) {
+
+} */
+
+/* Large devices (desktops, less than 1200px) */
+/* @media (max-width: 1199.98px) {
+
+} */
+
+/* Extra large devices (large desktops)
+No media query since the extra-large breakpoint has no upper bound on its width */
