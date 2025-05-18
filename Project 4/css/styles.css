@@ -1,0 +1,338 @@
+/* natural box model */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* UTILITIES */
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* COLORS */
+/* Will create a warning in the W3C CSS validator */
+/* Ignore that - CSS variables are fine to use */
+:root {
+  --slategrey: #434B63;
+  --peach: #FFDBBA;
+  --coral: #F27935;
+  --turquoise: #4ECDC4;
+  --cream: #fef9ed;
+  --grey: #6C7A89;
+  --red: #f2354f;
+}
+
+body {
+  background-image: linear-gradient(72deg, #434B63, #4CC6BF);
+  margin: 0;
+  padding: 0;
+  color: var(--slategrey);
+}
+img {
+  display: block;
+  width: 100%;
+}
+
+/* TYPOGRAPHY & LINKS */
+/* font-family: 'Ovo', serif; */
+/* font-family: 'Montserrat', sans-serif; */
+/* links are coral / peach  */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ovo', serif;
+  margin-bottom: 1rem;
+  color: white;
+  align-self: center;
+}
+h2 {
+  color: #f0a274;
+}
+p, figcaption, li, address  {
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(158, 228, 228);
+}
+address {
+  color:#F27935;
+}
+a:link, a:visited {
+  color: var(--coral);
+}
+a:hover, a:active {
+  color: var(--peach);
+}
+
+/* NAVIGATION */
+/* TODO: Add mobile-friendly navigation to the upper-right corner of the window */
+nav {
+  background-color: var(--slategrey);
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.nbutton {
+  background: rgba(67, 75, 99, 0.144);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1001;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  width: 140px;
+}
+
+.nav-links a {
+  color: var(--peach);
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+}
+
+nav.active {
+  width: 140px;
+}
+
+/* HOME & BASE STRUCTURE */
+/* Set the background to counter.jpg */
+.main-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+#home-background  {
+  background-image: url(../images/counter.jpg);
+  width: 180%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: right;
+  right: 0;
+  display: none;
+}
+.dots {
+  /* This sets a second background - because it's generated we can't use the multiple bkgs technique from Project 2 */
+  /* http://www.patternify.com/ */
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAJUlEQVQYV2NkYGBIY4CAWVAaTDHik0BWCGeDdCADuLFES8B1AwBXcgQHq6hTZwAAAABJRU5ErkJggg==) repeat;
+  /* it makes the text hard to read, so I changed the font color */
+
+}
+.container {
+
+  width: 100%;
+  align-items: center;
+  margin-left: 0;   
+  margin-right: auto;
+  padding: 0 2rem;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+.logo {
+  width: 220px;
+  align-self: center;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+#home article section{
+  border: 2px dotted white;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.social {
+  margin-top: 1rem;
+}
+
+.social a {
+  text-decoration: none;
+  color: var(--coral);
+  font-size: 1.5rem;
+}
+
+.social a:hover {
+  color: var(--peach);
+}
+
+.social a i {
+  font-size: 100%;
+}
+
+
+#menu article {
+  text-align: center;
+}
+
+#menu article p {
+  color: #FFDABA;
+}
+
+
+/* TODO: Style the typography for #home  */
+
+
+
+/* Decorative box */
+/* .line {
+use #home article section instead
+} */
+
+/* ASIDE */
+/* TODO: style the aside and any typography you need for aside */
+aside {
+  margin-top: 30px;
+  background-color: white;
+  color: #F27935;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+aside h3 {
+  color: #F27935;
+}
+
+
+
+/* MENU PAGE */
+/* TODO: Override any styles you need to from #home */
+/* Use #menu before the selectors if they repeat from #home */
+/* Use the class name if there is a class set */
+/* #menu {
+  
+} */
+/* TODO: style the rest of the elements and typography for the menu page */
+.coffees {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-x: auto;
+  color: #FFDABA;
+}
+
+.coffees table {
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.sizes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sizes p {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* FOOTER */
+/* Style the footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0;
+  padding: 1rem;
+  background-color: var(--slategrey);
+  color: white;
+  margin-top: 2rem;
+}
+/* TODO: style the rest of the footer */
+footer section {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+footer address {
+  font-style: italic;
+}
+
+
+
+/* MEDIA QUERIES FROM SMALLEST TO LARGEST = MOBILE FIRST */
+/* Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default */
+
+/* TODO: Adjust the size of the .container in index.html */
+/* TODO: Adjust any headline sizes (as needed) */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #home-background {
+    display: block;
+  }
+  .coffees {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  footer {
+    margin-top: 0;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .sizes {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .sizes p {
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+
+  .sizes p:first-child {
+    margin-right: 0;
+  }
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+}

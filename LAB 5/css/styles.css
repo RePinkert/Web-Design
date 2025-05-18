@@ -1,0 +1,269 @@
+/* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+  Colors
+*/
+:root {
+  --body-text: #333;
+  --medium-grey: #6e6e6e;
+  --light-grey: #999;
+  --yellow: #fc0;
+}
+
+/*
+  Structure
+*/
+main {
+  /* make the width 730px, center on the page */
+  width: 730px;
+  margin: 0 auto;
+
+}
+
+/*
+  Typography
+*/
+/* 
+  all headlines and figcaption
+    'Nunito', Gill Sans, Gill Sans MT, sans-serif
+  
+  paragraphs
+    'Noto Serif JP', 'Source Serif Pro', Georgia, serif
+    adjust size, line-height, color, and margin
+  
+  .graphic-text
+    'Nunito', Gill Sans, Gill Sans MT, sans-serif
+    uppercase, give it about 3px of letter spacing, weight is 300
+*/
+h1, h2, h3, h4, h5, h6, figcaption {
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+}
+
+p {
+  font-family: 'Noto Serif JP', 'Source Serif Pro', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--body-text);
+  margin: 0 0 1.5em;
+}
+
+.graphic-text {
+  text-transform: uppercase;
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+/*
+  Navigation
+*/
+nav {
+  /* white background, adjust padding, add a border on the bottom */
+  /* make sticky or fixed, set top coordinate, set z-index */
+  z-index: 1;
+  display: flex;
+  height: 49px;
+  background-color: gray;
+  align-items: center;
+  position: fixed;
+  top:0;
+  width: 100%;
+}
+
+.logo {
+  /* tell the logo to have a height of 32px */
+  height: 32px;
+  width: auto;
+}
+
+/*
+  Header
+*/
+header {
+  /* adjust margin, add a border on the bottom */
+  margin: 2.0em 0;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.series-name {
+  /* consider adjusting font size and weight */
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* pay attention to how this works  */
+.series-name::after {
+  content: " ";
+  display: inline-block;
+  background: var(--yellow);
+  background:
+      var(--yellow);
+      width: 3px;
+      height: 14px;
+      margin: 0px 20px -1px;
+}
+
+.genre {
+  /* consider adjusting font size and weight */
+  font-size: 16px;
+  font-weight: 300;
+}
+
+h1 {
+  /* adjust font size and margin */
+  font-size: 38px;
+  margin:0;
+}
+
+/* this means the H2 directly following the H1 */
+/* defaults ok for most H2 in this case */
+h1 + h2 {
+  /* adjust font size and margin and font weight */
+  font-size: 18px;
+  margin: 15px 0;
+  font-weight: 400;
+}
+
+.byline {
+  /* adjust font size and margin */
+  margin-top: 35px;
+  color: var(--medium-grey);
+  font-size: 12px;
+}
+
+.byline-name {
+  /* adjust font weight */
+  font-weight: 900;
+  color: #000;
+}
+
+/*
+  Article
+*/
+article {
+  margin: 3.0em 0;
+}
+
+.date {
+  /* adjust font size, grey text */
+  font-size: 12px;
+  color: var(--medium-grey);
+}
+
+.location {
+  /* adjust font size and weight */
+  color: #000;
+  font-weight: 800;
+  
+}
+
+.location::after {
+  /* search for 'mdash unicode' and include as content */
+  content: "—";
+}
+
+/* pay attention to how this works  */
+article p:nth-last-child(2)::after {
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 15px;
+  margin-left: 8px;
+  border: 3px solid var(--yellow);
+  background: transparent;
+}
+
+.twitter {
+  /* add grey border, padding */
+  /* family is Nunito */
+  /* adjust font weight, font size, font style */
+  border: 1px solid var(--light-grey);
+  padding: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/*
+  Images
+*/
+
+figure {
+  /* width is 666px, adjust margin */
+  width: 666px;
+  margin: 0;
+}
+
+img {
+  /* this is set so IMG pays attention to width of parent (figure) */
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  /* adjust font size, margin */
+  margin: 16px 0 8px;
+  font-size: 14px;
+  color: #000;
+}
+
+.feature {
+  /* width is 100%, re-adjust margin from figure {} (line 161) */
+  width: 100%;
+  margin: 20px 0;
+}
+
+.feature-image {
+  /* set turtles-1 as the background, have it cover the space, height 350px */
+  background-image: url(../images/turtles-1.png);
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+}
+
+.feature > figcaption {
+  width: 730px;
+  margin: 1.0em auto 3.5em;
+}
+
+.credit {
+  /* adjust font size, margin, grey text  */
+  /* display block so it goes on a new line */
+  display: block;
+  margin-top: 14px;
+  color: var(--medium-grey);
+  font-size: 12px;
+}
+
+/*
+  Links
+*/
+a:link, a:visited {
+  /* black text, no text decoration, 2px yellow border on bottom */
+  color: var(--body-text);
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+}
+
+.twitter a:link, .twitter a:visited {
+  /* grey text */
+  color: var(--medium-grey);
+}
+
+.twitter a:active, .twitter a:hover {
+  /* black text */
+  color: var(--body-text);
+
+}
+
+/* https://ianlunn.github.io/Hover/ */
+/* Sweep To Top */

@@ -1,0 +1,406 @@
+/* apply a natural box layout model to all elements */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+/* Nav */
+.is-visible {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+    display: block;
+}
+#mySidenav {
+    z-index: 10000;
+}
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+    background-color: white;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: grey;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.openbtn {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    color: black;
+    font-family: "Molengo", sans-serif;
+}
+
+.openbtn:hover {
+    color: white;
+    cursor: pointer;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 48
+}
+.menu-button {
+    font-size: 36px !important;
+    position: relative;
+    top: 6px;
+    left: -4px;
+}
+.menu-text {
+    font-size: 12px;
+    display: block;
+}
+/* RWD tag to visually indicate media query breaks */
+#tag {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 25px;
+	height: 25px;
+	background-color: #CC0000;
+}
+
+/* PAGE THEME COLORS - PLEASE USE */
+:root {
+    --menu-color: gold;
+    --iu-red: rgb(153, 0, 0);
+    --iu-grey: rgb(237, 235, 235);
+    --iu-black: rgb(69, 56, 43);
+}
+
+/* Extra small devices (phones, less than 768px) */
+
+/* 
+    GENERAL
+*/
+body {
+  margin: 0;
+  min-width: 768px;
+  background-color: #fff;
+}
+
+/* 
+    TYPOGRAPHY
+*/
+.molengo-regular {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+h1, h2, h3, h4, h5, h6, p, li, a, td, figcaption {
+    font-family: "Molengo", sans-serif;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    /* also adjust margin and line-height */
+}
+
+h1 {
+    font-size:36px;
+    color: #ffffff;
+    margin: 0 auto;
+    padding: 1rem;
+    font-weight: 400;
+    background-color: var(--iu-red);
+    text-align: center
+    /* also adjust padding and font weight */
+    /* adjust H1 size in the media queries */
+}
+
+h1 span {
+    font-weight: 700;
+    /* adjust font weight */
+}
+
+h2 {
+    font-size: 30px;
+
+}
+
+h3 {
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/*
+    HEADER
+*/
+header h1, .container {
+    /* should stretch up to 800px wide and center on the screen */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    background-color: var(--iu-red);
+    color: #ffffff;
+}
+
+/*
+    MAP
+*/
+#map { 
+    /* adjust map height in the media queries  */
+    height: 180px; 
+}
+
+/* Main */
+.racing-stripes {
+    /* https://css-tricks.com/stripes-css/ */
+    height: 33px;
+    color: white;
+    background: repeating-linear-gradient(
+    45deg,
+    var(--iu-grey),
+    var(--iu-grey) 10px,
+    #9c9c9c 10px,
+    #9c9c9c 20px
+  );
+
+}
+
+article {
+
+    /* add padding */
+    padding: 2.0em;
+    max-width: 800px;
+}
+
+/* Add additional page styles here */
+ul {list-style:none;}
+
+.gray-box {
+    background-color: var(--iu-grey);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: content-box;
+    padding: 20px 0;
+}
+
+.gray-box-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.white-box {
+    background-color: #ffffff;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: content-box;
+    padding: 20px 0;
+}
+
+.white-box-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 2.0em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.research-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.challenges-img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 18px;
+}
+
+footer {
+    padding: 2.0em;
+    background-color: var(--iu-red);
+    color: white;
+    /* set background color and use margin to push it down from the rest of the content */
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    margin: 0 1rem;
+}
+footer li :hover {
+    text-decoration: underline;
+}
+footer a {
+    color: white;
+}
+
+/*
+    BUTTONS AND LINKS
+*/
+.button {
+    background-color: var(--iu-red);
+    border: 3px solid var(--iu-red);
+    border-radius: 20px;
+    color: white;
+    padding: 0.5em 1.0em;
+    margin: 0 0 0 0;
+    display: inline-block;
+    font-size: 18px;
+    letter-spacing: 1px;
+    transition: background-color .2s ease-out,color .2s ease-out,border-color .18s ease-out;
+    max-width: 400px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--iu-red);
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*
+    MEDIA QUERIES
+*/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    #tag { background-color: #FF9900; }
+   
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    #tag { background-color: #00AA88; }
+    
+    
+    
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+    #tag { background-color: #674EA7; }
+    .button-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .research-container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+    
+    .challenges-img {
+        flex: 1;
+        max-width: 50%;
+        height: auto;
+    }
+    
+    .research-content {
+        flex: 1;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 768px) {
+    #tag { 
+        background-color: #000000; 
+        position: fixed;
+    }
+    footer ul {
+        flex-direction: column;
+    }
+}
